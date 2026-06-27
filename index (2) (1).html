@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SOC AI Responsive System</title>
+
+<style>
+body{
+    margin:0;
+        font-family:Arial;
+            background:#0a0f1c;
+                color:white;
+                }
+
+                /* HEADER */
+                header{
+                    background:#111827;
+                        padding:15px;
+                            text-align:center;
+                                font-weight:bold;
+                                }
+
+                                /* MAIN LAYOUT */
+                                .container{
+                                    display:flex;
+                                        width:90%;
+                                            margin:auto;
+                                                margin-top:20px;
+                                                    gap:15px;
+                                                    }
+
+                                                    /* SIDEBAR */
+                                                    .sidebar{
+                                                        width:25%;
+                                                            background:#111827;
+                                                                padding:15px;
+                                                                    border-radius:10px;
+                                                                    }
+
+                                                                    /* MAIN */
+                                                                    .main{
+                                                                        width:75%;
+                                                                        }
+
+                                                                        /* CARD */
+                                                                        .card{
+                                                                            background:#1f2937;
+                                                                                padding:20px;
+                                                                                    border-radius:10px;
+                                                                                    }
+
+                                                                                    /* INPUT */
+                                                                                    input,select{
+                                                                                        width:100%;
+                                                                                            padding:10px;
+                                                                                                margin:8px 0;
+                                                                                                    border:none;
+                                                                                                        border-radius:5px;
+                                                                                                        }
+
+                                                                                                        /* BUTTON */
+                                                                                                        button{
+                                                                                                            width:100%;
+                                                                                                                padding:10px;
+                                                                                                                    background:#22c55e;
+                                                                                                                        border:none;
+                                                                                                                            color:white;
+                                                                                                                                border-radius:6px;
+                                                                                                                                    cursor:pointer;
+                                                                                                                                    }
+
+                                                                                                                                    /* RESULT */
+                                                                                                                                    .result{
+                                                                                                                                        margin-top:15px;
+                                                                                                                                            padding:15px;
+                                                                                                                                                background:#111827;
+                                                                                                                                                    border-radius:10px;
+                                                                                                                                                    }
+
+                                                                                                                                                    /* COLORS */
+                                                                                                                                                    .red{color:#ef4444;}
+                                                                                                                                                    .green{color:#22c55e;}
+                                                                                                                                                    .yellow{color:#facc15;}
+
+                                                                                                                                                    /* 🌐 RESPONSIVE DESIGN */
+
+                                                                                                                                                    /* MOBILE */
+                                                                                                                                                    @media (max-width: 768px){
+
+                                                                                                                                                    .container{
+                                                                                                                                                        flex-direction:column;
+                                                                                                                                                            width:95%;
+                                                                                                                                                            }
+
+                                                                                                                                                            .sidebar{
+                                                                                                                                                                width:100%;
+                                                                                                                                                                }
+
+                                                                                                                                                                .main{
+                                                                                                                                                                    width:100%;
+                                                                                                                                                                    }
+
+                                                                                                                                                                    header{
+                                                                                                                                                                        font-size:16px;
+                                                                                                                                                                        }
+                                                                                                                                                                        }
+
+                                                                                                                                                                        /* SMALL MOBILE */
+                                                                                                                                                                        @media (max-width: 480px){
+
+                                                                                                                                                                        header{
+                                                                                                                                                                            font-size:14px;
+                                                                                                                                                                            }
+
+                                                                                                                                                                            button{
+                                                                                                                                                                                font-size:14px;
+                                                                                                                                                                                }
+
+                                                                                                                                                                                input,select{
+                                                                                                                                                                                    font-size:14px;
+                                                                                                                                                                                    }
+                                                                                                                                                                                    }
+                                                                                                                                                                                    </style>
+
+                                                                                                                                                                                    </head>
+
+                                                                                                                                                                                    <body>
+
+                                                                                                                                                                                    <header>
+                                                                                                                                                                                    SOC AI Expert Responsive System
+                                                                                                                                                                                    </header>
+
+                                                                                                                                                                                    <div class="container">
+
+                                                                                                                                                                                    <!-- SIDEBAR -->
+                                                                                                                                                                                    <div class="sidebar">
+                                                                                                                                                                                    <h3>Dashboard</h3>
+                                                                                                                                                                                    <p>✔ Threat Detection</p>
+                                                                                                                                                                                    <p>✔ AI Analysis</p>
+                                                                                                                                                                                    <p>✔ Network Monitoring</p>
+                                                                                                                                                                                    <p>✔ Role System</p>
+                                                                                                                                                                                    </div>
+
+                                                                                                                                                                                    <!-- MAIN -->
+                                                                                                                                                                                    <div class="main">
+
+                                                                                                                                                                                    <div class="card">
+
+                                                                                                                                                                                    <h3>Security Quiz System</h3>
+
+                                                                                                                                                                                    <select id="role">
+                                                                                                                                                                                    <option value="admin">Admin</option>
+                                                                                                                                                                                    <option value="analyst">Analyst</option>
+                                                                                                                                                                                    <option value="viewer">Viewer</option>
+                                                                                                                                                                                    </select>
+
+                                                                                                                                                                                    <input id="req" placeholder="Requests per second">
+                                                                                                                                                                                    <input id="cpu" placeholder="CPU Usage %">
+                                                                                                                                                                                    <input id="ram" placeholder="RAM Usage %">
+                                                                                                                                                                                    <input id="failed" placeholder="Failed Login Attempts">
+
+                                                                                                                                                                                    <button onclick="analyze()">Analyze</button>
+
+                                                                                                                                                                                    <div class="result" id="out">Waiting...</div>
+
+                                                                                                                                                                                    </div>
+
+                                                                                                                                                                                    </div>
+
+                                                                                                                                                                                    </div>
+
+                                                                                                                                                                                    <script>
+
+                                                                                                                                                                                    function analyze(){
+
+                                                                                                                                                                                    let role=document.getElementById("role").value;
+                                                                                                                                                                                    let req=+document.getElementById("req").value;
+                                                                                                                                                                                    let cpu=+document.getElementById("cpu").value;
+                                                                                                                                                                                    let ram=+document.getElementById("ram").value;
+                                                                                                                                                                                    let failed=+document.getElementById("failed").value;
+
+                                                                                                                                                                                    let score=0;
+
+                                                                                                                                                                                    if(req>10000) score+=40;
+                                                                                                                                                                                    if(cpu>80) score+=20;
+                                                                                                                                                                                    if(ram>80) score+=20;
+                                                                                                                                                                                    if(failed>20) score+=20;
+
+                                                                                                                                                                                    let out="";
+
+                                                                                                                                                                                    /* VIEWER */
+                                                                                                                                                                                    if(role==="viewer"){
+                                                                                                                                                                                    out=`
+                                                                                                                                                                                    <h3 class="yellow">Viewer Mode</h3>
+                                                                                                                                                                                    <p>Limited Access</p>
+                                                                                                                                                                                    <p>Score: ${score}</p>
+                                                                                                                                                                                    `;
+                                                                                                                                                                                    }
+
+                                                                                                                                                                                    /* ANALYST */
+                                                                                                                                                                                    else if(role==="analyst"){
+                                                                                                                                                                                    out = score>70 ?
+                                                                                                                                                                                    `<h3 class="red">Threat Detected</h3>
+                                                                                                                                                                                    <p>Score: ${score}</p>
+                                                                                                                                                                                    <p>Investigate System</p>`
+                                                                                                                                                                                    :
+                                                                                                                                                                                    `<h3 class="green">System Normal</h3>
+                                                                                                                                                                                    <p>Score: ${score}</p>`;
+                                                                                                                                                                                    }
+
+                                                                                                                                                                                    /* ADMIN */
+                                                                                                                                                                                    else{
+                                                                                                                                                                                    out = score>70 ?
+                                                                                                                                                                                    `<h3 class="red">ADMIN ALERT 🚨</h3>
+                                                                                                                                                                                    <p>Full System Access</p>
+                                                                                                                                                                                    <p>Attack Type: DDoS / Brute Force</p>
+                                                                                                                                                                                    <p>Score: ${score}</p>`
+                                                                                                                                                                                    :
+                                                                                                                                                                                    `<h3 class="green">System Safe</h3>
+                                                                                                                                                                                    <p>Admin View Normal</p>
+                                                                                                                                                                                    <p>Score: ${score}</p>`;
+                                                                                                                                                                                    }
+
+                                                                                                                                                                                    document.getElementById("out").innerHTML=out;
+
+                                                                                                                                                                                    }
+
+                                                                                                                                                                                    </script>
+
+                                                                                                                                                                                    </body>
+                                                                                                                                                                                    </html>
